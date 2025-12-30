@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Skylith - Company Website
+
+A modern, responsive company website built with Next.js, featuring service-based and product-based solutions.
+
+## Features
+
+- 🎨 Modern UI with glassmorphism effects
+- 🎭 GSAP animations and parallax scrolling
+- 📱 Fully responsive design
+- 🔐 Admin dashboard with JWT authentication
+- 💾 MongoDB integration for contact and help data
+- 🎯 Bootstrap-based components
+- 🌈 Custom purple theme (dark purple, light purple, white)
+
+## Tech Stack
+
+- **Frontend**: Next.js 16, React 19, Bootstrap 5
+- **Animations**: GSAP with ScrollTrigger
+- **Backend**: Node.js, Express
+- **Database**: MongoDB
+- **Authentication**: JWT
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js (v18 or higher)
+- MongoDB (running on localhost:27017)
+
+### Installation
+
+1. Install frontend dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install server dependencies:
+```bash
+cd server
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Start MongoDB (if not running):
+```bash
+mongod
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Start the Express server:
+```bash
+cd server
+npm start
+```
 
-## Learn More
+5. Start the Next.js development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Admin Dashboard
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Access the admin dashboard at `/admin`
 
-## Deploy on Vercel
+**Default Credentials:**
+- Username: `admin`
+- Password: `admin123`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The admin dashboard allows you to:
+- View all contact submissions
+- View and manage help requests
+- Update help request status
+- Delete contacts and help requests
+- View statistics
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+Skylith/
+├── src/
+│   ├── app/
+│   │   ├── admin/          # Admin dashboard
+│   │   ├── api/            # API routes
+│   │   ├── contact/        # Contact page
+│   │   ├── services/       # Services page
+│   │   ├── terms/          # Terms & Conditions
+│   │   ├── globals.css     # Global styles and theme
+│   │   └── layout.js       # Root layout
+│   └── components/
+│       ├── Header.js       # Navigation header
+│       ├── Footer.js       # Footer component
+│       └── FloatingHelpPopup.js  # Help popup
+├── server/
+│   ├── index.js            # Express server
+│   └── package.json
+└── package.json
+```
+
+## API Endpoints
+
+### Public Endpoints
+- `POST /api/contact` - Submit contact form
+- `POST /api/help` - Submit help request
+- `POST /api/admin/login` - Admin login
+
+### Protected Endpoints (require JWT)
+- `GET /api/admin/contacts` - Get all contacts
+- `GET /api/admin/help` - Get all help requests
+- `GET /api/admin/stats` - Get statistics
+- `DELETE /api/admin/contacts/:id` - Delete contact
+- `DELETE /api/admin/help/:id` - Delete help request
+- `PUT /api/admin/help/:id` - Update help request status
+
+## Theme Colors
+
+- **Dark Purple**: `#2D1B4E`
+- **Light Purple**: `#6B46C1`
+- **Purple Accent**: `#8B5CF6`
+- **White**: `#FFFFFF`
+
+## License
+
+This project is private and proprietary.
+# Skylith
