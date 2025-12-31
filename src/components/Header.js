@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,12 +48,19 @@ export default function Header() {
       <nav className="navbar navbar-expand-lg">
         <div className="container">
           <Link 
-            className="navbar-brand fw-bold fs-3" 
+            className="navbar-brand d-flex align-items-center" 
             href="/" 
-            style={{ color: 'var(--white)' }}
             onClick={handleLinkClick}
+            style={{ textDecoration: 'none' }}
           >
-            Skylith
+            <Image 
+              src="/Logo.png" 
+              alt="Skylith Technology" 
+              width={150} 
+              height={50}
+              style={{ height: 'auto', width: 'auto', maxHeight: '50px' }}
+              priority
+            />
           </Link>
           
           <button

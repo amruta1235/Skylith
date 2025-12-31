@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Skylith - Innovative Services & Products",
   description: "Leading provider of innovative services and products. We deliver excellence through cutting-edge solutions.",
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }) {

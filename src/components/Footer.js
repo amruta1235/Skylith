@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect } from 'react';
+import Image from 'next/image';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import { gsap } from 'gsap';
 
@@ -139,17 +140,15 @@ export default function Footer() {
                 }}
               />
               
-              <h4 
-                className="fw-bold mb-4" 
-                style={{ 
-                  fontSize: '2rem',
-                  position: 'relative',
-                  zIndex: 1,
-                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
-                }}
-              >
-                Skylith
-              </h4>
+              <div className="mb-4" style={{ position: 'relative', zIndex: 1 }}>
+                <Image 
+                  src="/Logo.png" 
+                  alt="Skylith Technology" 
+                  width={180} 
+                  height={60}
+                  style={{ height: 'auto', width: 'auto', maxHeight: '60px' }}
+                />
+              </div>
               <p 
                 className="mb-4" 
                 style={{ 
