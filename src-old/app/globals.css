@@ -34,13 +34,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Smooth scroll enhancement */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
 html,
 body {
   max-width: 100vw;
@@ -183,67 +176,4 @@ a {
   .section-title {
     font-size: 1.75rem;
   }
-}
-
-/* Glossy shine animation */
-@keyframes shine {
-  0% {
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
-  }
-  100% {
-    transform: translateX(100%) translateY(100%) rotate(45deg);
-  }
-}
-
-/* Floating animation for glossy shapes */
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translate(30px, -30px) scale(1.1);
-    opacity: 0.8;
-  }
-}
-
-/* Pulse animation for center glow */
-@keyframes pulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 0.6;
-  }
-}
-
-/* Cursor styles - Desktop only */
-@media (min-width: 768px) {
-  * {
-    cursor: none !important;
-  }
-
-  a, button, [role="button"], input, textarea, select {
-    cursor: none !important;
-  }
-}
-
-/* Cursor animations - GSAP handles most animations */
-@keyframes cursorGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 40px rgba(139, 92, 246, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(139, 92, 246, 1), 0 0 60px rgba(139, 92, 246, 0.6);
-  }
-}
-
-.custom-cursor-dot {
-  animation: cursorGlow 3s ease-in-out infinite;
-}
-
-.custom-cursor-follower {
-  transition: none;
 }

@@ -3,7 +3,6 @@ import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Script from 'next/script';
 import ScrollToTop from '@/components/ScrollToTop';
-import CursorFollower from '@/components/CursorFollower';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +23,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <CursorFollower />
         <ScrollToTop />
         {children}
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" />

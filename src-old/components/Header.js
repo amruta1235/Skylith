@@ -17,19 +17,8 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll to top when pathname changes
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [pathname]);
-
-  const handleLinkClick = () => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    setIsMobileMenuOpen(false);
-  };
-
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
     { href: '/services', label: 'Services' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
@@ -46,12 +35,7 @@ export default function Header() {
     >
       <nav className="navbar navbar-expand-lg">
         <div className="container">
-          <Link 
-            className="navbar-brand fw-bold fs-3" 
-            href="/" 
-            style={{ color: 'var(--white)' }}
-            onClick={handleLinkClick}
-          >
+          <Link className="navbar-brand fw-bold fs-3" href="/" style={{ color: 'var(--white)' }}>
             Skylith
           </Link>
           
@@ -78,18 +62,14 @@ export default function Header() {
                       color: 'var(--white)',
                       fontWeight: pathname === link.href ? '600' : '400'
                     }}
-                    onClick={handleLinkClick}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
               <li className="nav-item ms-3">
-                <Link 
-                  href="/contact" 
-                  className="btn btn-gradient text-white"
-                  onClick={handleLinkClick}
-                >
+                <Link href="/contact" className="btn btn-gradient text-white">
                   Get Started
                 </Link>
               </li>
